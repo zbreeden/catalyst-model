@@ -1,0 +1,27 @@
+{
+  "id": "2025-09-10T20:00:00Z-catalyst-broadcast-seed",
+  "ts_utc": "2025-09-10T20:00:00Z",
+  "date": "2025-09-10",
+  "module": "The Catalyst",
+  "repo": "catalyst-model",
+  "title": "Master star broadcast seed initialized",
+  "summary": "Bootstrapped constellation broadcasting: schema, nightly pulse, and Signal renderer.",
+  "tags": ["broadcasting", "schema", "renderer", "pulse"],
+  "rating": "high",
+  "origin": {
+    "name": "The Catalyst",
+    "url": "https://zbreeden.github.io/catalyst-model/",
+    "emoji": "⚙️"
+  },
+  "links": {
+    "readme": "https://github.com/zbreeden/catalyst-model#readme",
+    "page": "https://zbreeden.github.io/catalyst-model/",
+    "data": "https://github.com/zbreeden/catalyst-model/tree/main/signals",
+    "runbook": "https://github.com/zbreeden/catalyst-model/blob/main/RUNBOOK.md"
+  },
+  "payload": {
+    "notes": "This is the top-level aggregator in The Catalyst. Nightly pulse pulls latest.json from each star."
+  },
+  "checksum": "",
+  "version": "1.0.0"
+}
