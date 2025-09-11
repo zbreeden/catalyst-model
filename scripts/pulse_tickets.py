@@ -10,7 +10,7 @@ Example:
     --out signals/tickets.json \
     --name "FourTwenty • The Catalyst" \
     --module "catalyst-model" \
-    --emoji "⚙️" \
+    --emoji "⚡" \
     --url "https://zbreeden.github.io/catalyst-model/" \
     --statuses "open,on_hold,complete" \
     --dedupe-by-id true \
