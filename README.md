@@ -46,10 +46,11 @@
   - seeds/tickets.yml: Star ticket log.
   - data/external: Open source datasets intended to improve the decision making ability of the star.
   - data/internal: Internal ticketing data intended to improve the evaluation ability of the star.
-  - signals/tickets.json: Ticket broadcasting system.
+  - signals/tickets.json: Ticket broadcasting system that will be picked up by The Signal.
   - dashboard/: Stores KPI data for dashboard rendering.
   - scripts/: Python processing scripts.
   - playground/: UX analysis playground.
+  - script/pulse_tickets.py: Reads tickets.yml, filters by status, and adds to tickets.json for Signal broadcasts.
 
 ---
 
