@@ -50,7 +50,7 @@
   - dashboard/: Stores KPI data for dashboard rendering.
   - scripts/: Python processing scripts.
   - playground/: UX analysis playground.
-  - script/pulse_tickets.py: Reads tickets.yml, filters by status, and adds to tickets.json for Signal broadcasts.
+  - scripts/pulse_tickets.py: Reads tickets.yml, filters by status, and adds to tickets.json for Signal broadcasts.
 
 ---
 
