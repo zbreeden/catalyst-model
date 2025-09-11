@@ -1,0 +1,218 @@
+# schema/tickets.schema.yml
+title: "tickets.yml schema"
+description: >
+  Contract for The Catalyst ticket log. Each item represents a process-flow ticket
+  the constellation should track, analyze, and pulse on.
+
+type: array
+
+items:
+  type: object
+  additionalProperties: false
+
+  required:
+    - id
+    - title
+    - owner
+    - status
+    - created_at
+    - updated_at
+
+  properties:
+
+    # Identity & Classification
+    id:
+      type: string
+      description: "Stable ticket identifier"
+      pattern: "^TKT-[0-9]{4}-[0-9]{3}$"   # e.g., TKT-2025-001
+
+    title:
+      type: string
+      minLength: 3
+      description: "Human-readable ticket title"
+
+    description:
+      type: string
+      description: "Short summary of the change, intent, and definition of done"
+
+    owner:
+      type: string
+      description: "Primary accountable persona (suitekeeper, architect, or user name/handle)"
+      pattern: "^[a-z0-9_]+$"
+
+    collaborators:
+      type: array
+      description: "Optional contributors"
+      items:
+        type: string
+        pattern: "^[a-z0-9_]+$"
+
+    orbit:
+      type: string
+      description: "Which orbit the work primarily touches (e.g., growth_experience, delivery_insight)"
+      pattern: "^[a-z0-9_]+$"
+
+    module:
+      type: string
+      description: "Primary module (repo) this ticket lives in (e.g., catalyst-model, archive-model)"
+      pattern: "^[a-z0-9_\\-]+$"
+
+    tags:
+      type: array
+      description: "Lightweight taxonomy for search, routing, and KPIs"
+      items:
+        type: string
+        pattern: "^[a-z0-9_]+$"
+
+    # Status & Flow
+    status:
+      type: string
+      description: "Ticket lifecycle state"
+      enum: [open, in_progress, blocked, on_hold, review, complete, canceled]
+
+    priority:
+      type: string
+      description: "Execution urgency (planning & triage)"
+      enum: [low, medium, high, critical]
+
+    severity:
+      type: string
+      description: "Impact if not executed (risk lens)"
+      enum: [minor, moderate, major, critical]
+
+    reason_code:
+      type: string
+      description: "Optional reason for current state or decision"
+      pattern: "^[a-z0-9_]+$"
+
+    # Dates & Time
+    created_at:
+      type: string
+      description: "Creation timestamp (UTC ISO-8601)"
+      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+
+    updated_at:
+      type: string
+      description: "Last material update (UTC ISO-8601)"
+      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+
+    due_at:
+      type: string
+      description: "Optional due date/time (UTC ISO-8601) for SLA or demo targets"
+      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+
+    completed_at:
+      type: string
+      description: "Populated when status moves to complete (UTC ISO-8601)"
+      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+
+    # Pulses & SLA
+    inactivity_threshold_days:
+      type: integer
+      minimum: 1
+      description: "Threshold for no-movement pulses (days since updated_at)"
+
+    sla:
+      type: object
+      additionalProperties: false
+      description: "Optional SLA config used by The Catalyst to drive pulses/escalations"
+      properties:
+        target_days:
+          type: number
+          minimum: 0
+          description: "Target duration from created_at to complete (days)"
+        escalate_after_days:
+          type: number
+          minimum: 0
+          description: "Escalation trigger if not complete (days)"
+        policy:
+          type: string
+          description: "Human-readable escalation policy summary"
+
+    # Scenario Inputs (for forecasting & lift analysis)
+    experiment_flag:
+      type: boolean
+      description: "Marks ticket as part of an experiment / transformation test"
+
+    baseline_metric:
+      type: number
+      description: "Pre-change baseline value (e.g., conversion rate, throughput/day)"
+
+    target_metric:
+      type: number
+      description: "Post-change goal value (same unit as baseline_metric)"
+
+    confidence_goal:
+      type: number
+      minimum: 0
+      maximum: 1
+      description: "Desired statistical confidence for declaring lift (0–1)"
+
+    # Relations & Links
+    relates_to:
+      type: array
+      description: "Other ticket ids this ticket depends on or is linked to"
+      items:
+        type: string
+        pattern: "^TKT-[0-9]{4}-[0-9]{3}$"
+
+    attachments:
+      type: array
+      description: "Optional links to docs, PRs, datasets, dashboards, etc."
+      items:
+        type: object
+        additionalProperties: false
+        required: [type, url]
+        properties:
+          type:
+            type: string
+            enum: [doc, pr, issue, dashboard, dataset, other]
+          label:
+            type: string
+          url:
+            type: string
+            pattern: "^https?://.+"
+
+    # Audit trail (append-only log for transparency)
+    history:
+      type: array
+      description: "Chronological event log"
+      items:
+        type: object
+        additionalProperties: false
+        required: [ts_utc, event]
+        properties:
+          ts_utc:
+            type: string
+            description: "UTC ISO-8601 timestamp of event"
+            pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+          event:
+            type: string
+            description: "Short event label (e.g., status_change, comment, pulse)"
+            pattern: "^[a-z0-9_]+$"
+          note:
+            type: string
+            description: "Optional explanatory note"
+          actor:
+            type: string
+            description: "Who performed the action"
+            pattern: "^[a-z0-9_]+$"
+
+    # Computed fields (read-only; may be populated by scripts)
+    metrics:
+      type: object
+      additionalProperties: false
+      description: "Derived KPIs for dashboard rendering"
+      properties:
+        age_days:
+          type: number
+          minimum: 0
+        cycle_time_days:
+          type: number
+          minimum: 0
+        stalled:
+          type: boolean
+        throughput_bucket:
+          type: string
+          description: "Optional bucketing for viz (e.g., week_2025_37)"
+          pattern: "^[a-z0-9_]+$"
