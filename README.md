@@ -51,7 +51,7 @@
   - scripts/: Python processing scripts.
   - playground/: UX analysis playground.
   - scripts/pulse_tickets.py: Reads tickets.yml, filters by status, and adds to tickets.json for Signal broadcasts.
-  - .github/workflows/catalyst-pulse.yml: 
+  - .github/workflows/catalyst-pulse.yml: Runs nightly, pulses tickets.yml, filters by status, and appends new data to tickets.json.
 
 ---
 
