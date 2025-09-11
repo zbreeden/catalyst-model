@@ -1,0 +1,58 @@
+name: Catalyst — Pulse Tickets (Nightly)
+
+on:
+  schedule:
+    # Runs daily at 03:15 UTC (~23:15 ET during DST)
+    - cron: "15 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalyst-pulse
+  cancel-in-progress: false
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Append Catalyst tickets snapshot
+        run: |
+          python scripts/pulse_tickets.py \
+            --in seeds/tickets.yml \
+            --out signals/tickets.json \
+            --name "FourTwenty • The Catalyst" \
+            --module "catalyst-model" \
+            --emoji "⚙️" \
+            --url "https://zbreeden.github.io/catalyst-model/" \
+            --statuses "open,on_hold,complete" \
+            --dedupe-by-id true \
+            --keep 120
+
+      - name: Commit & push if changed
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "Suitekeeper Bot"
+            git config user.email "actions@github.com"
+            git add signals/tickets.json
+            git commit -m "chore(catalyst): append tickets snapshot [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
