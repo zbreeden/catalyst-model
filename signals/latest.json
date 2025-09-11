@@ -1,6 +1,6 @@
 [
   {
-    "id": "2025-09-11T15:00:00Z-catalyst-model-ticket-broadcast-system",
+    "id": "2025-09-11T15:00:00Z-catalyst-ticket-broadcast-system",
     "ts_utc": "2025-09-11T15:00:00Z",
     "date": "2025-09-11",
     "module": "The Catalyst",
@@ -8,7 +8,7 @@
     "title": "Catalyst launches constellation-wide ticket & broadcast system",
     "summary": "Created schema-driven tickets and broadcasts for new entries. Implemented in The Catalyst (⚡) with a plan to replicate across all stars, keeping data molded by schemas within seeds/, scripts/, and signals/.",
     "tags": ["catalyst", "tickets", "broadcasts", "schemas", "constellation", "automation"],
-    "rating": "high",
+    "rating": "critical",
     "origin": {
       "name": "FourTwenty • The Catalyst",
       "url": "https://zbreeden.github.io/catalyst-model/",
