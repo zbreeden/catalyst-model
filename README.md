@@ -35,13 +35,13 @@
 
 ## Scaffolding
 
--**Seeding**
+- **Seeding**
   - README.md: This living scroll meant as an executive summary of the star's role within the constellation.
   - index.html: This star's public face.
   - schema/: Constellation schema map (e.g. rules, funnels, orbits, modules, statuses).
   - seeds/: Constellation seed data (e.g. glossary, tags, registry).
   - signals/: Constellation broadcast system (e.g. latest.json).
--**Concept Building**
+- **Concept Scaffolding**
   - schema/tickets.schema.yml: Star schema map for ticketing system.
   - seeds/tickets.yml: Star ticket log.
   - data/external: Open source datasets intended to improve the decision making ability of the star.
@@ -50,5 +50,15 @@
   - dashboard/: Stores KPI data for dashboard rendering.
   - scripts/: Python processing scripts.
   - playground/: UX analysis playground.
+
+---
+
+## Future Vision
+
+- Integration with Archive pulses to ensure data integrity.
+- Integration with Signal pulses to ensure constellation alignment.
+- Integration with Evaluator to ensure data conhesion.
+- Scenario simulators for projecting bottlenecks across the constellation.
+- Automated lift measurement on experiments tied to ticket flows and external data.
 
 License: MIT
