@@ -1,66 +1,32 @@
-# ⚙️ FourTwenty • The Catalyst
+# Catalyst Model
 
-**Orbit:** Growth & Experience System  
-**Theme:** Experimentation & Transformation — test changes, measure lift, and keep flows moving forward.  
+> **The Catalyst is the optimization**
 
----
+## 🌌 Constellation Information
 
-## About
+- **Module Key**: `catalyst_model`  
+- **Repository**: `catalyst-model`
+- **Orbit**: `delivery-insight`
+- **Status**: `seed`
+- **Emoji**: ⚡
 
-- The Catalyst is the constellation’s **ticketing star**, designed to manage transformation flows across the architecture.  
-- When the Architect initiates a new process flow, a **ticket** is created in The Catalyst.  
-- The Catalyst monitors the lifecycle of this ticket, presenting KPIs in its dashboard and pulsing reminders if tickets stall without progress.  
-- The Catalyst also serves as an **analysis engine** — over time, as it collects more ticket histories, it can deliver **scenario analysis** on open flows, helping Suitekeepers predict completion times and identify bottlenecks before they impact other stars.  
+## 🚀 Quick Start
 
----
+1. **Review seeds/**: Adapt seeded data for this module
+2. **Configure schemas/**: Update schema definitions as needed  
+3. **Generate signals/**: Create latest.json broadcast file
+4. **Run validation**: `scripts/validate.sh`
 
-## Core Functions
+## 📡 Broadcasting
 
-- **Ticket Creation:** Capture a new process flow as a `ticket.yml` entry.  
-- **Lifecycle Monitoring:** Track ticket status through states (e.g., `open → in_progress → complete`).  
-- **KPIs & Dashboards:** Present ticket metrics such as:  
-  - Average time to completion  
-  - Tickets by status (open, in_progress, blocked, complete)  
-  - Longest outstanding tickets  
-  - Flow throughput (tickets opened vs. closed per period)  
-- **Pulses:**
-  - Broadcast when a ticket has been inactive for too long.
-  - Broadcast when a star has been inactive in its development for too long.
-  - Broadcast when a star has completed a process.  
-- **Scenario Analysis:**
-  - Uses historical ticket data to forecast likely completion paths and risks.
-  - Uses open source environmental data to help boost the star's ability to evaluate tickets.   
+This module produces a `signals/latest.json` file conforming to the constellation's broadcast schema. The Signal (📡) aggregates these across all stars.
+
+## 🔗 Constellation Links
+
+- **Hub**: [FourTwenty Analytics](https://github.com/zbreeden/FourTwentyAnalytics)
+- **Archive**: Glossary, tags, and canonical definitions
+- **Signal**: Cross-constellation broadcasting and telemetry
 
 ---
 
-## Scaffolding
-
-- **Seeding**
-  - README.md: This living scroll meant as an executive summary of the star's role within the constellation.
-  - index.html: This star's public face.
-  - schema/: Constellation schema map (e.g. rules, funnels, orbits, modules, statuses).
-  - seeds/: Constellation seed data (e.g. glossary, tags, registry).
-  - signals/: Constellation broadcast system (e.g. latest.json).
-- **Concept Scaffolding**
-  - schema/tickets.schema.yml: Star schema map for ticketing system.
-  - seeds/tickets.yml: Star ticket log.
-  - data/external: Open source datasets intended to improve the decision making ability of the star.
-  - data/internal: Internal ticketing data intended to improve the evaluation ability of the star.
-  - signals/tickets.json: Ticket broadcasting system that will be picked up by The Signal.
-  - dashboard/: Stores KPI data for dashboard rendering.
-  - scripts/: Python processing scripts.
-  - playground/: UX analysis playground.
-  - scripts/pulse_tickets.py: Reads tickets.yml, filters by status, and adds to tickets.json for Signal broadcasts.
-  - .github/workflows/catalyst-pulse.yml: Runs nightly, pulses tickets.yml, filters by status, and appends new data to tickets.json.
-
----
-
-## Future Vision
-
-- Integration with Archive pulses to ensure data integrity.
-- Integration with Signal pulses to ensure constellation alignment.
-- Integration with Evaluator to ensure data conhesion.
-- Scenario simulators for projecting bottlenecks across the constellation.
-- Automated lift measurement on experiments tied to ticket flows and external data.
-
-License: MIT
+*This star is part of the FourTwenty Analytics constellation - a modular analytics sandbox where each repository is a specialized "model" within an orbital system.*
