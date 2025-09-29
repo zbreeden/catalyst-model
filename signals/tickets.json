@@ -458,5 +458,30 @@
       "on_hold": [],
       "complete": []
     }
+  },
+  {
+    "id": "2025-09-29-catalyst-tickets",
+    "ts_utc": "2025-09-29T03:43:23Z",
+    "origin": {
+      "name": "FourTwenty • The Catalyst",
+      "module": "catalyst-model",
+      "emoji": "⚙️",
+      "url": "https://zbreeden.github.io/catalyst-model/"
+    },
+    "status_order": [
+      "open",
+      "on_hold",
+      "complete"
+    ],
+    "tickets_by_status": {
+      "open": [
+        {
+          "id": "TKT-2025-001",
+          "module": "catalyst-model"
+        }
+      ],
+      "on_hold": [],
+      "complete": []
+    }
   }
 ]
