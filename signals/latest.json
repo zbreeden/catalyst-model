@@ -1,0 +1,26 @@
+{
+  "id": "20251015T142350Z-weekly_update",
+  "ts_utc": "2025-10-15T14:23:50Z",
+  "module": "Catalyst",
+  "repo": "catalyst-model",
+  "title": "Genesis Project",
+  "summary": "The Barycenter has asked The Catalyst to continue working on The Genesis Project; The Signal posted a teaser to LinkedIn",
+  "rating": "high",
+  "origin": {
+    "name": "Catalyst",
+    "url": "https://zbreeden.github.io/catalyst-model/",
+    "emoji": "⚡"
+  },
+  "status": "sprout",
+  "links": {
+    "readme": "https://github.com/zbreeden/catalyst-model#readme",
+    "page": "https://zbreeden.github.io/catalyst-model/"
+  },
+  "payload": {
+    "module_key": "catalyst_model",
+    "broadcast_key": "weekly_update",
+    "tags": [
+      "genesis"
+    ]
+  }
+}
