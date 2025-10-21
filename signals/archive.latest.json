@@ -1,0 +1,89 @@
+[
+  {
+    "id": "20251015T142350Z-weekly_update",
+    "ts_utc": "2025-10-15T14:23:50Z",
+    "module": "Catalyst",
+    "repo": "catalyst-model",
+    "title": "Genesis Project",
+    "summary": "The Barycenter has asked The Catalyst to continue working on The Genesis Project; The Signal posted a teaser to LinkedIn",
+    "rating": "high",
+    "origin": {
+      "name": "Catalyst",
+      "url": "https://zbreeden.github.io/catalyst-model/",
+      "emoji": "⚡"
+    },
+    "status": "sprout",
+    "links": {
+      "readme": "https://github.com/zbreeden/catalyst-model#readme",
+      "page": "https://zbreeden.github.io/catalyst-model/"
+    },
+    "payload": {
+      "module_key": "catalyst_model",
+      "broadcast_key": "weekly_update",
+      "tags": [
+        "genesis"
+      ]
+    }
+  },
+  {
+    "id": "20250925T193355Z-checking_in",
+    "ts_utc": "2025-09-25T19:33:55Z",
+    "module": "Catalyst",
+    "repo": "catalyst-model",
+    "title": "Checking In",
+    "summary": "The Catalyst is checking in with the hub.",
+    "rating": "normal",
+    "origin": {
+      "name": "Catalyst",
+      "url": "https://zbreeden.github.io/catalyst-model/",
+      "emoji": "⚡"
+    },
+    "status": "seed",
+    "links": {
+      "readme": "https://github.com/zbreeden/catalyst-model#readme",
+      "page": "https://zbreeden.github.io/catalyst-model/"
+    },
+    "payload": {
+      "module_key": "catalyst_model",
+      "broadcast_key": "checking_in",
+      "tags": [
+        "check_in"
+      ]
+    }
+  },
+  {
+    "id": "20250923T020305Z-catalyst-model-genesis",
+    "ts_utc": "2025-09-23T02:03:05Z",
+    "date": "2025-09-23",
+    "module": "Catalyst Model",
+    "repo": "catalyst-model",
+    "title": "New constellation star initialized",
+    "summary": "Generated module scaffold with seedset distribution and basic broadcast structure.",
+    "tags": [
+      "genesis",
+      "scaffold",
+      "module",
+      "delivery-insight"
+    ],
+    "rating": "normal",
+    "origin": {
+      "name": "Catalyst Model",
+      "url": "https://zbreeden.github.io/catalyst-model/",
+      "emoji": "⚡"
+    },
+    "links": {
+      "readme": "https://github.com/zbreeden/catalyst-model#readme",
+      "page": "https://zbreeden.github.io/catalyst-model/",
+      "data": "https://github.com/zbreeden/catalyst-model/tree/main/signals",
+      "runbook": "https://github.com/zbreeden/catalyst-model/blob/main/RUNBOOK.md"
+    },
+    "payload": {
+      "orbit": "delivery-insight",
+      "status": "seed",
+      "module_key": "catalyst_model",
+      "notes": "Initial scaffold created by new-module.sh script. Ready for customization and development."
+    },
+    "checksum": "",
+    "version": "1.0.0"
+  }
+]
