@@ -24,10 +24,10 @@ This module produces a `signals/latest.json` file conforming to the constellatio
 
 - **Hub**: [FourTwenty Analytics](https://github.com/zbreeden/FourTwentyAnalytics)
 - **The Archive**: Glossary, tags, and canonical definitions pulled down nightly and distributed out for constellation harmony.
-- **The Signal**: Cross-constellation broadcasting and telemetry pulled and circulated nightly to foster promotion and development.
-- **The Launch**: Detailed workflows pulled in nightly to assure an aligned culture of process improvement that starts from the Barycenter outwards to foster healthy architecture.
+- **The Signal**: Cross-constellation broadcasting and telemetry pulled and circulated nightly to foster promotion and intelligence.
+- **The Launch**: Detailed workflows pulled in nightly to assure an aligned culture of process improvement that originates from the Barycenter to foster healthy architecture.
 - **The Protector**: Examines workflows to assure drift is minimal fostering sustainability.
-- **The Develper**: Feeds the constellation data for healthy modelling.
+- **The Developer**: Feeds the constellation data for healthy modelling.
 
 ## Scripts
 
